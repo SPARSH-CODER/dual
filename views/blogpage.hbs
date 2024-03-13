@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogpage</title>
+    <style>
+      body{
+        background-color: bisque;
+      }
+      *{
+        font-size: 20px;
+      }
+      h1{
+        background-color: black;
+        font-size: 50px;
+        color: white;
+      }
+    </style>
+</head>
+  {{!-- this navbar code come from partials --}}
+
+{{> navbar}}
+<body>
+
+  <center> <h1>Blogpage</h1></center>
+  <form action="/addblog" method="post">   {{!--  action give the path where to send form data and method is post or get --}}
+    <label for="author">author</label>
+    <input type="text" name="author" id="author"><br>
+
+    <label for="category">category</label>
+    <input type="text" name="category" id="category"><br>
+
+    <label for="blog">blog</label>
+    <textarea name="blog" id="blog" cols="30" rows="10"></textarea>
+
+    <button type="submit"> submit </button>
+    </form>
+</body>
+</html>

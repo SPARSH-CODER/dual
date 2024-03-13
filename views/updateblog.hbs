@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        background-color: bisque;
+      }
+      *{
+        font-size: 20px;
+      }
+      h1{
+        background-color: black;
+        font-size: 50px;
+        color: white;
+      }
+    </style>
+</head>
+{{>navbar}}
+<body>
+<center><h1>update blog</h1></center>
+    <form action="/updateblog" method="post">  
+    <label for="author">author</label>
+    <input type="text" name="author" id="author" value="{{updateblog.author}}"><br>
+
+    <label for="category">category</label>
+    <input type="text" name="category" id="category" value="{{updateblog.category}}"><br>
+
+    <label for="blog">blog</label>
+    <textarea name="blog" id="blog" cols="30" rows="10">{{updateblog.blog}}</textarea>
+
+    <input type="hidden" name="blogId" value="{{updateblog.blogId}}">
+    <button type="submit"> submit </button>
+    </form>
+</body>
+</html>

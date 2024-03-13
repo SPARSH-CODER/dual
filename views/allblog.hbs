@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body{
+        background-color: bisque;
+      }
+      *{
+        font-size: 20px;
+      }
+      h1{
+        background-color: black;
+        font-size: 50px;
+        color: white;
+      }
+    </style>
+  </head>
+  {{> navbar}}
+
+
+  <body>
+   <center><h1>all blogs</h1></center> 
+
+    {{#each blogs}}
+      <ul>
+        <li>{{this.author}}</li>
+        <li>{{this.category}}</li>
+        <li>{{this.blog}}</li>
+        <button><a href="/delete/{{this.blogId}}">Delete</a></button>
+        <button><a href="/update/{{this.blogId}}">Update</a></button>
+      </ul>
+    {{/each}}
+
+  </body>
+</html>
